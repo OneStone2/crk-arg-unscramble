@@ -52,10 +52,11 @@ int main() {
 	m['M'] = 4;
 	m['N'] = 5;
 	m['O'] = 6;
-	m['U'] = 7;
-	m['Y'] = 8;
-	string s = "AMYUYINMOALIINER";
-	vi cur(9, 0);
+	m['R'] = 7;
+	m['U'] = 8;
+	m['Y'] = 9;
+	string s = "UYOALINE";
+	vi cur(10, 0);
 	for (char c:s) cur[m[c]] += 1;
 	dp[cur] = vvi();
 	visited[cur] = false;
@@ -67,7 +68,7 @@ int main() {
 	myfile.open("words.txt");
 	while (myfile) {
 		myfile >> s;
-		vi target(9, 0);
+		vi target(10, 0);
 		for (char c:s) target[m[c]] += 1;
 		move.push_back(target);
 		words[target].push_back(s);
@@ -89,6 +90,6 @@ int main() {
 		}
 	}
 	
-	write(orig, vi(9, 0), "", 0);
+	write(orig, vi(10, 0), "", 0);
 	
 }
